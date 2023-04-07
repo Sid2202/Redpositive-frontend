@@ -29,7 +29,7 @@ export default function UserForm(){
                 contact: contact,
                 hobby: hobby,
             }
-            axios.post('http://localhost:5080/api', data)
+            axios.post('https://main--phenomenal-syrniki-ccf5ba.netlify.app/api', data)
             .then((response) => {
                 console.log(response)
             })
@@ -43,7 +43,7 @@ export default function UserForm(){
     
 
     const getAllData = useCallback( async() => {
-        await axios.post('http://localhost:5080/api/table')
+        await axios.post('https://main--phenomenal-syrniki-ccf5ba.netlify.app/api/table')
             .then((response) => {
                 setTable(response.data)
             })
@@ -103,7 +103,7 @@ export default function UserForm(){
 
     const deleteData = async(item) => {
         var data = {_id: item}
-        await axios.post('http://localhost:5080/api/delete', data)
+        await axios.post('https://main--phenomenal-syrniki-ccf5ba.netlify.app/api/delete', data)
             .then((response) => {
                 data={}
         })
